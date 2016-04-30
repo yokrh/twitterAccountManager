@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   #
     root 'home#index'
     get '/home' => 'home#index'
-
+  #
+    get '/auth/:provider/callback' => 'sessions#callback'
+    post '/auth/:provider/callback' => 'sessions#callback'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
