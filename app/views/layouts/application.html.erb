@@ -9,7 +9,11 @@
 <body>
 
 <div class="header">
-  <%= link_to "Login", '/auth/twitter' %>
+  <% if current_user %>
+    <%= link_to "Logout", logout_path, method: "delete" %>
+  <% else %>
+    <%= link_to "Login", '/auth/twitter' %>
+  <% end %>
 </div>
 
 <%= yield %>
