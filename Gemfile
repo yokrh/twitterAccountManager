@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+#
+gem 'twitter'
+#
+gem 'omniauth-twitter'
+#
+gem 'config'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -33,6 +40,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  # ADDED
+  gem 'pry-rails'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end
