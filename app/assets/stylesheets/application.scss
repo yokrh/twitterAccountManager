@@ -13,3 +13,19 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+header {
+  padding: 20px 0;
+}
+
+header nav {
+  border-bottom: 0.1rem solid #AAA;
+  background-color: #FFF;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header p {
+  padding: 0 20px;
+  margin: 0 0;
+}
