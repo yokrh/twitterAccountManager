@@ -1,0 +1,15 @@
+<% content = object %>
+
+<div class="row text">
+  <p><%= simple_format(h(content.text)) %></p>
+</div>
+<div class="row items">
+  <div class="col-md-1 rt-image">
+    <img src="http://pic.prepics-cdn.com/020505/45831286.gif" />
+  </div>
+  <p class="col-md-1 rt-cnt"><%= content.retweet_count %></p>
+  <div class="col-md-1 fav-image">
+    <img src="http://www.civillink.net/esozai/img/pics2264.gif" />
+  </div>
+  <p class="col-md-1 fav-cnt"><%= content.favorites_count %></p>
+</div>
