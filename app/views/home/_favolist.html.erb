@@ -1,0 +1,20 @@
+<section class="container">
+  <div class="heading">
+    <img src="http://free-illustrations-ls01.gatag.net/images/lgi01a201410280000.jpg" />
+    <h2>Favo list</h2>
+  </div>
+  <% favos.each do |favo| %>
+    <div class="row favo-container">
+      <div class="col-md-2 icon">
+        <div class="icon-image">
+          <%= image_tag favo.user.profile_image_uri_https %>
+        </div>
+        <p class="username"><%= favo.user.name %></p>
+        <p class="time"><%= favo.created_at.in_time_zone(user.time_zone).strftime("%Y-%m-%d %H:%M:%S") %></p>
+      </div>
+      <div class="col-md-6 content">
+        <%= render 'content', object: favo %>
+      </div>
+    </div>
+  <% end %>
+</section>
