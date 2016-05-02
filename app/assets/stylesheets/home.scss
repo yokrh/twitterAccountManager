@@ -30,8 +30,13 @@ img {
 .user-profile {
   border: 1rem groove #AAA;
   background-color: #FEFEFD;
-  .image, .description {
-    height: 180px;
+  .image {
+    height: 100px;
+    width: auto;
+    margin: 10px 10px;
+  }
+  .description {
+    height: 160px;
     width: auto;
     margin: 10px 10px;
   }
@@ -57,7 +62,8 @@ img {
     }
     .time {
       margin: 0;
-      font-size: 1.1rem;
+      font-size: 0.9rem;
+      font-weight: normal;
     }
   }
   .content {
