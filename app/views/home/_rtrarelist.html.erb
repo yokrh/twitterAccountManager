@@ -1,0 +1,13 @@
+<section class="container">
+  <div class="heading">
+    <img src="http://free-illustrations-ls01.gatag.net/images/lgi01a201401181000.jpg" />
+    <h2>Retweetrare list</h2>
+  </div>
+  <% rtrares.each do |rtrare| %>
+    <div class="row rtrare-container">
+      <div class="col-md-6 content">
+        <%= render 'content', object: rtrare %>
+      </div>
+    </div>
+  <% end %>
+</section>
