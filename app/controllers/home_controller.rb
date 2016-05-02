@@ -13,7 +13,7 @@ class HomeController < ApplicationController
       config.access_token_secret = current_user.access_token_secret
     end
     @user = @client.user
-    @favos = @client.favorites
+    @favos = @client.favorites count: 200
   end
 
   private
