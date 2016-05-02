@@ -7,7 +7,7 @@
     <div class="row favo-container">
       <div class="col-md-2 icon">
         <div class="icon-image">
-          <img src="http://ure.pia.co.jp/mwimgs/c/7/400/img_c7654b54f577db8cc98dac603f78efab257112.jpg" />
+          <%= image_tag favo.user.profile_image_uri_https %>
         </div>
         <p class="username"><%= favo.user.name %></p>
         <p class="time"><%= favo.created_at.in_time_zone(user.time_zone).strftime("%Y-%m-%d %H:%M:%S") %></p>
