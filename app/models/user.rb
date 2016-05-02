@@ -3,10 +3,8 @@ class User < ActiveRecord::Base
     create! do |user|
       user.provider = auth['provider']
       user.uid = auth['uid']
-      name = auth['info']['name']
-      nickname = auth['info']['nickname']
-      access_token_key = auth['extra']['access_token'].params[:oauth_token]
-      access_token_secret = auth['extra']['access_token'].params[:oauth_token_secret]
+      user.name = auth['info']['name']
+      user.nickname = auth['info']['nickname']
     end
   end
 end
