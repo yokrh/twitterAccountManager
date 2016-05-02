@@ -1,0 +1,32 @@
+<section class="container">
+  <div class="heading">
+    <img src="http://free-illustrations-ls01.gatag.net/images/lgi01a201410280000.jpg" />
+    <h2>Favo list</h2>
+  </div>
+  <% favos.each_with_index do |favo| %>
+    <div class="row favo-container">
+      <div class="col-md-2 icon">
+        <div class="icon-image">
+          <img src="http://ure.pia.co.jp/mwimgs/c/7/400/img_c7654b54f577db8cc98dac603f78efab257112.jpg" />
+        </div>
+        <p class="username"><%= favo.user.name %></p>
+        <p class="time"><%= favo.created_at.in_time_zone(user.time_zone).strftime("%Y-%m-%d %H:%M:%S") %></p>
+      </div>
+      <div class="col-md-6 content">
+        <div class="row text">
+          <p><%= simple_format(h(favo.text)) %></p>
+        </div>
+        <div class="row items">
+          <div class="col-md-1 rt-image">
+            <img src="http://pic.prepics-cdn.com/020505/45831286.gif" />
+          </div>
+          <p class="col-md-1 rt-cnt"><%= favo.retweet_count %></p>
+          <div class="col-md-1 fav-image">
+            <img src="http://www.civillink.net/esozai/img/pics2264.gif" />
+          </div>
+          <p class="col-md-1 fav-cnt"><%= favo.favorites_count %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</section>
