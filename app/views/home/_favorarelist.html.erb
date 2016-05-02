@@ -1,0 +1,13 @@
+<section class="container">
+  <div class="heading">
+    <img src="http://free-illustrations-ls01.gatag.net/images/lgi01a201410280000.jpg" />
+    <h2>Favorare list</h2>
+  </div>
+  <% favorares.each do |favorare| %>
+    <div class="row favorare-container">
+      <div class="col-md-6 content">
+        <%= render 'content', object: favorare %>
+      </div>
+    </div>
+  <% end %>
+</section>
