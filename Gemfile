@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 #
+gem 'bootstrap-sass'
+#
 gem 'twitter'
 #
 gem 'omniauth-twitter'

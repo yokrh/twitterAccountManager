@@ -1,3 +1,78 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+* {
+  border: 1px;
+  border-style: groove;
+  border-color: #88F;
+}
+//*/
+
+h2 {
+  margin: 2rem 1rem;
+}
+
+img {
+  height: 100%;
+  width: auto;
+}
+
+.heading {
+  img {
+    float: left;
+    margin-right: 10px;
+    height: 30px;
+  }
+}
+
+.user-profile {
+  border: 1rem groove #AAA;
+  background-color: #FEFEFD;
+  .image, .description {
+    height: 180px;
+    width: auto;
+    margin: 10px 10px;
+  }
+}
+
+.favo-container {
+  margin: 2rem;
+  border: 0.2rem solid #EEEEEF;
+  background-color: #FAFAFF;
+  p {
+    font-weight: bold;
+  }
+  .icon {
+    margin-top: 5px;
+    //background-color: #FAFAFF;
+    text-align: center;
+    .icon-image {
+      height: 50px;
+    }
+    .username {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+    .time {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+  }
+  .content {
+    background-color: #FFFFFF;
+    .text {
+      margin: 0;
+      padding-left: 5px;
+      font-size: 2rem;
+    }
+    .items {
+      height: 20px;
+      display: inline-block;
+    }
+    .rt-image, .fav-image {
+      height: 18px;
+    }
+  }
+}

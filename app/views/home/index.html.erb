@@ -1,1 +1,64 @@
-<h1>index</h1>
+<% if current_user%>
+<section class="container">
+  <div class="row user-profile">
+    <div class="col-md-4 image">
+      <img src="http://chatnoir666.com/wp-content/uploads/2015/03/knuttz-ueba-305111.jpg" />
+    </div>
+    <div class="col-md-8 description">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>名前nya0</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>登録日</td>
+            <td>1999/01/01</td>
+          </tr>
+          <tr>
+            <td>フォロー</td>
+            <td>100</td>
+            <td>フォロワー</td>
+            <td>80</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="heading">
+    <img src="http://free-illustrations-ls01.gatag.net/images/lgi01a201410280000.jpg" />
+    <h2>favo list</h2>
+  </div>
+  <% (0..2).each_with_index do |x, idx| %>
+    <div class="row favo-container">
+      <div class="col-md-2 icon">
+        <div class="icon-image">
+          <img src="http://ure.pia.co.jp/mwimgs/c/7/400/img_c7654b54f577db8cc98dac603f78efab257112.jpg" />
+        </div>
+        <p class="username">nya1</p>
+        <p class="time">XXXX/YY/XX</p>
+      </div>
+      <div class="col-md-6 content">
+        <div class="row text">
+          <p><%= simple_format(h("hogehoge" + ( idx==0 ? "\n改行\n \n \n\n \n\n\n" : "" ) + "fugafuga<p>a</p>")) %></p>
+        </div>
+        <div class="row items">
+          <div class="col-md-1 rt-image">
+            <img src="http://pic.prepics-cdn.com/020505/45831286.gif" />
+          </div>
+          <p class="col-md-1 rt-cnt">3</p>
+          <div class="col-md-1 fav-image">
+            <img src="http://www.civillink.net/esozai/img/pics2264.gif" />
+          </div>
+          <p class="col-md-1 fav-cnt">4</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</section>
+<% else %>
+<% end %>
