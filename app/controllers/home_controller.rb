@@ -12,13 +12,15 @@ class HomeController < ApplicationController
       config.access_token = current_user.access_token_key
       config.access_token_secret = current_user.access_token_secret
     end
+
+    max_size = 200
     @user = @client.user
-    @tweets = @client.user_timeline count: 200
-    @favos = @client.favorites count: 200
+    @tweets = @client.user_timeline count: max_size
+    @favos = @client.favorites count: max_size
     @favorares = @tweets.select{ |t| t.favorite_count > 0 }
-    @rts_by_me = @client.retweeted_by_me count: 200
+    @rts_by_me = @client.retweeted_by_me count: max_size
     @rts = @rts_by_me.map{ |r| r.retweeted_status }
-    @rtrares = @client.retweets_of_me count:200
+    @rtrares = @client.retweets_of_me count:max_size
   end
 
   private
