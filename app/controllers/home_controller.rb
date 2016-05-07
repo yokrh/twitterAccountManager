@@ -15,7 +15,7 @@ class HomeController < ApplicationController
     @user = @client.user
     @tweets = @client.user_timeline count: 200
     @favos = @client.favorites count: 200
-    @favorares = @tweets.select{ |t| t.favorited? }
+    @favorares = @tweets.select{ |t| t.favorite_count > 0 }
     @rts_by_me = @client.retweeted_by_me count: 200
     @rts = @rts_by_me.map{ |r| r.retweeted_status }
     @rtrares = @client.retweets_of_me count:200
