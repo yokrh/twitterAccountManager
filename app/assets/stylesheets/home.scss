@@ -53,12 +53,11 @@ ul.tab-menu {
     list-style-type: none;
     color: #203040;
     background-color: #FAFAFA;
-    a {
-      padding: 0px 5px;
+    span {
+      padding: 0 15px;
       font-size: 1.6rem;
       font-weight: bold;
       text-align: center;
-      text-decoration: none;
     }
     :hover {
       color: #FAFAFA;
