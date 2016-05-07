@@ -36,11 +36,11 @@
 </section>
 <section class="container">
   <ul class="tab-menu row">
-    <li><span style="cursor:pointer" onclick="Array.prototype.forEach.call(getElementsByName('partial'),function(e){e.style.display='none'});getElementById('favolist').style.display='block';">ふぁぼリスト</span></li>
-    <li><span style="cursor:pointer" onclick="Array.prototype.forEach.call(getElementsByName('partial'),function(e){e.style.display='none'});getElementById('favorarelist').style.display='block';">ふぁぼられリスト</span></li>
+    <li><span style="cursor:pointer" onclick="Array.prototype.forEach.call(getElementsByName('partial'),function(e){e.style.display='none'});getElementById('favolist').style.display='block';">ふぁぼリスト<%= ' (' + favos.size.to_s + ')' %></span></li>
+    <li><span style="cursor:pointer" onclick="Array.prototype.forEach.call(getElementsByName('partial'),function(e){e.style.display='none'});getElementById('favorarelist').style.display='block';">ふぁぼられリスト<%= ' (' + favorares.size.to_s + ')' %></span></li>
     <!--
-    <li><span style="cursor:pointer" onclick="Array.prototype.forEach.call(getElementsByName('partial'),function(e){e.style.display='none'});getElementById('rtlist').style.display='block';">RTリスト</span></li>
-    <li><span style="cuusor:pointer" onclick="Array.prototype.forEach.call(getElementsByName('partial'),function(e){e.style.display='none'});getElementById('rtrarelist').style.display='block';">RTられリスト</span></li>
+    <li><span style="cursor:pointer" onclick="Array.prototype.forEach.call(getElementsByName('partial'),function(e){e.style.display='none'});getElementById('rtlist').style.display='block';">RTリスト<%= ' (' + rts.size.to_s + ')' %></span></li>
+    <li><span style="cuusor:pointer" onclick="Array.prototype.forEach.call(getElementsByName('partial'),function(e){e.style.display='none'});getElementById('rtrarelist').style.display='block';">RTられリスト<%= ' (' + rtrares.size.to_s + ')' %></span></li>
     -->
   </ul>
   <ul class="tab-content row">
