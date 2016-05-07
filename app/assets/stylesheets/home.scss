@@ -10,8 +10,13 @@
 }
 //*/
 
+.container {
+  margin-bottom: 30px;
+}
+
 h2 {
   margin: 2rem 1rem;
+  color: #AACCCC;
 }
 
 img {
@@ -28,7 +33,7 @@ img {
 }
 
 .user-profile {
-  border: 1rem groove #AAA;
+  border: 0.1rem solid #FFEAEA;
   background-color: #FEFEFD;
   .image {
     height: 80px;
@@ -49,7 +54,7 @@ ul.tab-menu {
   li {
     display: inline-block;
     margin: 0;
-    padding: 5px;
+    padding: 0;
     list-style-type: none;
     color: #203040;
     background-color: #FAFAFA;
@@ -77,7 +82,7 @@ ul.tab-content {
 .favo-container, .favorare-container, .rt-container, .rtrare-container {
   margin: 2rem;
   border: 0.2rem solid #EEEEEF;
-  background-color: #FAFAFF;
+  background-color: #FAFCFF;
   p {
     font-weight: bold;
   }
@@ -90,7 +95,7 @@ ul.tab-content {
     }
     .username {
       margin: 0;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
     .time {
       margin: 0;
@@ -103,11 +108,12 @@ ul.tab-content {
     .text {
       margin: 0;
       padding-left: 5px;
-      font-size: 2rem;
+      font-size: 1.1rem;
     }
     .items {
       height: 20px;
       display: inline-block;
+      font-size: 1rem;
     }
     .rt-image, .fav-image {
       height: 18px;
