@@ -42,6 +42,38 @@ img {
   }
 }
 
+ul.tab-menu {
+  margin-bottom: 0;
+  padding-left: 0;
+  font-size: 0;
+  li {
+    display: inline-block;
+    margin: 0;
+    padding: 5px;
+    list-style-type: none;
+    color: #203040;
+    background-color: #FAFAFA;
+    span {
+      padding: 0 15px;
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    :hover {
+      color: #FAFAFA;
+      background-color: #203040;
+    }
+  }
+}
+
+ul.tab-content {
+  padding: 0;
+  background-color: #FAFAFA;
+  li {
+    list-style-type: none;
+  }
+}
+
 .favo-container, .favorare-container, .rt-container, .rtrare-container {
   margin: 2rem;
   border: 0.2rem solid #EEEEEF;
