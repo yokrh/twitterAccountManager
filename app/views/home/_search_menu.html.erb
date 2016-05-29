@@ -1,0 +1,31 @@
+<%= form_tag("/home/#{object}", id: "search_menu_form_id", remote: true) do %>
+  <% case object %>
+  <% when 'favos' %>
+    <div class="row name">
+      <span>名前：</span>
+      <input name="username" type="search" placeholder="ツイートした人の名前" />
+    </div>
+    <div class="row time">
+      <span>日付：<span>
+      <input name="time_from" type="date" placeholder="XXXX/YY/ZZ" />
+      <span>~</span>
+      <input name="time_to" type="date" placeholder="XXXX/YY/ZZ" />
+    </div>
+    <div class="row operation">
+      <input name="reset" type="reset" value="リセット" />
+      <input name="submit" type="submit" value="検索！" />
+    </div>
+  <% when 'favorares' %>
+  <div class="row time">
+    <span>日付：<span>
+    <input name="time_from" type="date" placeholder="XXXX/YY/ZZ" />
+    <span>~</span>
+    <input name="time_to" type="date" placeholder="XXXX/YY/ZZ" />
+  </div>
+  <div class="row operation">
+    <input name="reset" type="reset" value="リセット" />
+    <input name="submit" type="submit" value="検索！" />
+  </div>
+  <% else %>
+  <% end %>
+<% end %>

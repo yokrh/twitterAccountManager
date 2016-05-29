@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   #
     root 'home#index'
     get '/home' => 'home#index'
+    post '/home/:object' => 'home#index_ajax'
   #
     get '/auth/:provider/callback' => 'sessions#callback'
     post '/auth/:provider/callback' => 'sessions#callback'

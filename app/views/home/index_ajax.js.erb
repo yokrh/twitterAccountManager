@@ -1,0 +1,7 @@
+<% case params[:object] %>
+<% when 'favos' %>
+$("#favolist").html('<%= j render "favolist" %>')
+<% when 'favorares' %>
+$("#favorarelist").html('<%= j render "favorarelist" %>')
+<% else %>
+<% end %>
