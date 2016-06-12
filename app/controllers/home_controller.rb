@@ -5,22 +5,7 @@ class HomeController < ApplicationController
 
   def index
     return unless current_user
-
-    @client = Twitter::REST::Client.new do |config|
-      config.consumer_key = Settings.twitter.consumer_key
-      config.consumer_secret = Settings.twitter.consumer_secret
-      config.access_token = current_user.access_token_key
-      config.access_token_secret = current_user.access_token_secret
-    end
-
-    max_size = 200
-    @user = @client.user
-    @tweets = @client.user_timeline count: max_size
-    @favos = @client.favorites count: max_size
-    @favorares = @tweets.select{ |t| t.favorite_count > 0 }
-    @rts_by_me = @client.retweeted_by_me count: max_size
-    @rts = @rts_by_me.map{ |r| r.retweeted_status }
-    @rtrares = @client.retweets_of_me count:max_size
+    fetch_user_datas
   end
 
   # 検索の絞り込み
@@ -44,10 +29,15 @@ class HomeController < ApplicationController
 
   private
   def client
-    @client
+    @client ||= Twitter::REST::Client.new do |config|
+      config.consumer_key = Settings.twitter.consumer_key
+      config.consumer_secret = Settings.twitter.consumer_secret
+      config.access_token = current_user.access_token_key
+      config.access_token_secret = current_user.access_token_secret
+    end
   end
   def user
-    @user
+    @user ||= @client.user
   end
   def tweets
     @tweets
@@ -63,5 +53,17 @@ class HomeController < ApplicationController
   end
   def rtrares
     @rtrares
+  end
+
+
+  # 最初のfetch
+  def fetch_user_datas
+    count = 100
+    @tweets = client.user_timeline count: count
+    @favos = client.favorites count: count
+    @favorares = @tweets.select{ |t| t.favorite_count > 0 }
+    @rts_by_me = client.retweeted_by_me count: count
+    @rts = @rts_by_me.map{ |r| r.retweeted_status }
+    @rtrares = client.retweets_of_me count:count
   end
 end
