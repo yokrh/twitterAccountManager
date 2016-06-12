@@ -23,6 +23,25 @@ class HomeController < ApplicationController
     @rtrares = @client.retweets_of_me count:max_size
   end
 
+  # 検索の絞り込み
+  def index_ajax
+    index # @favosが空になっているので。何かうまい方法ないのかな。dbに@xxx入れとく？
+
+    unless params[:username].nil? || params[:username] == ""
+      eval("@#{params[:object]}").select!{ |o| o.user.name == params[:username] }
+    end
+    unless params[:time_from].nil? || params[:time_from] == ""
+      eval("@#{params[:object]}").select! do |o|
+        params[:time_from] <= o.created_at.in_time_zone(user.time_zone)
+      end
+    end
+    unless params[:time_to].nil? || params[:time_to] == ""
+      eval("@#{params[:object]}").select! do |o|
+        o.created_at.in_time_zone(user.time_zone) <= params[:time_to]
+      end
+    end
+  end
+
   private
   def client
     @client
