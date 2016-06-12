@@ -16,7 +16,20 @@
         <p class="time"><%= favo.created_at.in_time_zone(user.time_zone).strftime("%Y-%m-%d %H:%M:%S") %></p>
       </div>
       <div class="col-md-6 content">
-        <%= render 'content', object: favo %>
+        <% content = favo %>
+        <div class="row text">
+          <p><%= simple_format(h(content.text)) %></p>
+        </div>
+        <div class="row items">
+          <div class="col-md-1 rt-image">
+            <img src="http://pic.prepics-cdn.com/020505/45831286.gif" />
+          </div>
+          <p class="col-md-2 rt-cnt"><%= content.retweet_count %></p>
+          <div class="col-md-1 fav-image">
+            <img src="http://www.civillink.net/esozai/img/pics2264.gif" />
+          </div>
+          <p class="col-md-2 fav-cnt"><%= content.favorites_count %></p>
+        </div>
       </div>
     </div>
   <% end %>
